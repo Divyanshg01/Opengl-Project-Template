@@ -1,5 +1,8 @@
 ## Opengl Project template on linux
 
+> In the code I have used glew instead of glad , although it will not make any difference because the use of glad and glew is almost same and it will not impact any of your learning but It has one advantage that it can provide people using nvim better code completion and diagnostics with LSP as glad uses macro for opengl functions which prevents the display of diagnostics
+> Although if you want to use glad you can do that to , I have included glad as well in the project code just make sure in the main.cpp and Shader.h file have either glad or glew not both
+
 ### Steps to follow
 1. clone the repo using `git clone https://github.com/Divyanshg01/OpenGL_Template.git`
 
