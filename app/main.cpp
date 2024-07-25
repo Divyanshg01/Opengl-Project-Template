@@ -1,5 +1,6 @@
 
-#include <glad/glad.h>
+// #include <glad/glad.h>
+#include<glew/glew.h>
 #include <stb_image.h>
 #include <GLFW/glfw3.h>
 #include <Shader.h>
@@ -38,14 +39,23 @@ int main()
 
     // glad: load all OpenGL function pointers
     // ---------------------------------------
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
-    }
+    // if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    // {
+    //     std::cout << "Failed to initialize GLAD" << std::endl;
+    //     return -1;
+    // }
 
     // build and compile our shader program
-    // ------------------------------------
+    //
+    //
+// Init GLEW for OpenGL context
+	GLenum err = glewInit(); 
+	if (err != GLEW_OK)
+	{
+		std::cerr << "Failed to init glew" << std::endl;
+		glfwTerminate();
+		return -1;
+	}
     Shader ourShader("./resources/Shaders/vertex.vs", "./resources/Shaders/fragment.fs"); // you can name your shader files however you like
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
@@ -144,7 +154,6 @@ int main()
     glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0);
     // or set it via the texture class
     ourShader.setInt("texture2", 1);
-
 
 
     // render loop
