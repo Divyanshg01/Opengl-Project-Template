@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/Executable.dir/main.cpp.o -o Executable  ../libs/glfw/src/libglfw3.a ../src/glad/libglad.a ../src/stbImage/libstb_image.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so 
